@@ -17,21 +17,21 @@ def check(ox):
     #horizontal wins
     for i in range(0, 8, 3):
         if pos[i] == ox and pos[i+1] == ox and pos[i+2] == ox:
-            print(ox + ' is a winner')
+            print(ox + ' is a winner!')
             exit()
     i=0
 
     #vertical wins
     for i in range(3):
         if pos[i] == ox and pos[i+3] == ox and pos[i+6] == ox:
-            print(ox + ' is a winner')
+            print(ox + ' is a winner!')
             exit()
     #cross wins
     if pos[0] == ox and pos[4] == ox and pos[8] == ox:
-        print(ox + ' is a winner')
+        print(ox + ' is a winner!')
         exit()
     if pos[2] == ox and pos[4] == ox and pos[6] == ox:
-        print(ox + ' is a winner')
+        print(ox + ' is a winner!')
         exit()
 
     #check if draw
@@ -43,7 +43,7 @@ def check(ox):
 def printgrid(list):
     k=0
     for i in range(15):
-        if i == 5 or i == 10:
+        if i == 4 or i == 9:
             print(("_"*5 + "|")*2 + "_"*5)
         elif i == 2 or i == 7 or i == 12:
             print(" "*2 + str(list[k]) + " "*2 + "|" + " "*2 + str(list[k+1]) + " "*2 + "|" + " "*2 + str(list[k+2]) + " "*2)
