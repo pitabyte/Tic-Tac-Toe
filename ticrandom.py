@@ -40,32 +40,20 @@ def check(ox):
         exit()
         
 #print grid with numbers for position tutorial
-def printgrid():
+def printgrid(list):
     k=0
     for i in range(15):
         if i == 5 or i == 10:
             print(("_"*5 + "|")*2 + "_"*5)
         elif i == 2 or i == 7 or i == 12:
-            print(" "*2 + str(pos[k]) + " "*2 + "|" + " "*2 + str(pos[k+1]) + " "*2 + "|" + " "*2 + str(pos[k+2]) + " "*2)
+            print(" "*2 + str(list[k]) + " "*2 + "|" + " "*2 + str(list[k+1]) + " "*2 + "|" + " "*2 + str(list[k+2]) + " "*2)
             k = k + 3
         else:
             print((" "*5 + "|")*2 + " "*5)
 
-#print grid without numbers
-def emptygrid():
-    k=0
-    for i in range(15):
-        if i == 5 or i == 10:
-            print(("_"*5 + "|")*2 + "_"*5)
-        elif i == 2 or i == 7 or i == 12:
-            print(" "*2 + str(choice[k]) + " "*2 + "|" + " "*2 + str(choice[k+1]) + " "*2 + "|" + " "*2 + str(choice[k+2]) + " "*2)
-            k = k + 3
-        else:
-            print((" "*5 + "|")*2 + " "*5)
-        
 
 #welcome with numbered grid
-printgrid()
+printgrid(pos)
 print('Look at the numeration of the grid and play accordingly :)')
 
 
@@ -77,6 +65,7 @@ while True:
         if choice[move-1] != 'O' or choice[move-1] != 'X':
             if move in pos:
                 break
+    
     choice[move-1] = 'X'
     pos[move-1] = 'X'
     check('X')
@@ -89,5 +78,5 @@ while True:
                 break
     choice[move-1] = 'O'
     pos[move-1] = 'O'
-    emptygrid()
+    printgrid(choice)
     check('O')
